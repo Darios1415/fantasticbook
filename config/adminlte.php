@@ -262,7 +262,7 @@ return [
                 ],
                 [
                     'text' => 'Libros',
-                    'url'  => 'libros',
+                    'url'  => 'usuario',
                 ],
                 [
                     'text' => 'Sucursal',
