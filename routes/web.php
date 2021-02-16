@@ -48,3 +48,8 @@ Route::get ('usuario', function(){
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
+
+//libros
+Route::get ('libros', function(){
+    return view('libros');
+});
