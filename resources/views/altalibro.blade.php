@@ -101,10 +101,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text">$</span>
                       </div>
-                      <input type="number" class="form-control" name="precio" id="precio" value="{{old('precio')}}">
-                      <div class="input-group-append">
-                        <span class="input-group-text">.00</span>
-                      </div>
+                      <input class="form-control" name="precio" id="precio" value="{{old('precio')}}" placeholder="37.99">
                     </div>
                   </div>
                 </div>

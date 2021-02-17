@@ -17,7 +17,7 @@ class LibrosController extends Controller
             'paginas' => 'required|integer',
             'fechap' => 'required',
             'sinopsis' => 'required|regex:/^[A-Z][A-Z,a-z,á,é,í,ó,ú,ñ,Ñ,Á,É,Í,Ó,Ú,ü,.,-,_,¿,?, ]+$/',
-            'precio' => 'required',
+            'precio' => 'required|regex:/^[0-9]+[.][0-9]{2}$/',
             'archivo' => 'required',
             'foto' => 'required|',
         ]);
