@@ -62,8 +62,8 @@
                     <label for="idioma">Idioma:</label>
                     <select name="idioma" id="idioma" class="custom-select">
                       <option selected>Selecciona un idioma</option>
-                      <option>Español</option>
-                      <option>Inglés</option>
+                      <option value="esp">Español</option>
+                      <option value="ing">Inglés</option>
                     </select>
                   </div>
                 </div>
@@ -109,19 +109,19 @@
                   <div class="form-group col-md-6">
                     <label for="idgen">Género:</label>
                     <select name="idgen" id="idgen" class="form-control">
-                      <option selected value="0">Elige el género</option>
-                      <option selected value="1">Romance</option>
-                      <option selected value="2">Histórico</option>
-                      <option selected value="3">Misterio y suspenso</option>
+                      <option selected="">Elige el género</option>
+                      <option value="1">Romance</option>
+                      <option value="2">Histórico</option>
+                      <option value="3">Misterio y suspenso</option>
                     </select>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="idsubgen">Subgénero:</label>
                     <select name="idsubgen" id="idsubgen" class="form-control">
-                      <option selected value="0">Elige un subgénero</option>
-                      <option selected value="1">Crímenes reales</option>
-                      <option selected value="2">Novela histórica</option>
-                      <option selected value="3">Suspense</option>
+                      <option selected="">Elige un subgénero</option>
+                      <option value="1">Crímenes reales</option>
+                      <option value="2">Novela histórica</option>
+                      <option value="3">Suspense</option>
                     </select>
                   </div>
                 </div>
