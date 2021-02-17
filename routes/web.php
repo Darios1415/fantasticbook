@@ -48,3 +48,9 @@ Route::get ('usuario', function(){
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
+Route::get ('genero', function(){
+    return view('cruds.genero');
+});
+Route::get ('subgenero', function(){
+    return view('cruds.subgenero');
+});

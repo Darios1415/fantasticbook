@@ -225,7 +225,7 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
+            'text' => 'buscar',
             'search' => true,
             'topnav' => true,
         ],
@@ -270,11 +270,11 @@ return [
                 ],
                 [
                     'text' => 'Genero',
-                    'url'  => 'libros',
+                    'url'  => 'genero',
                 ],
                 [
                     'text' => 'Subgenero',
-                    'url'  => 'libros',
+                    'url'  => 'subgenero',
                 ],
                 [
                     'text' => 'Municipio',
