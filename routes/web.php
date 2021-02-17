@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\GenerosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +53,7 @@ Route::get ('ventas', function(){
 Route::get ('genero', function(){
     return view('cruds.genero');
 });
-Route::get ('subgenero', function(){
-    return view('cruds.subgenero');
-});
+Route::post('guardar',[GenerosController::class,"guardar"])->name ('guardar');
 
 
 //municipio
