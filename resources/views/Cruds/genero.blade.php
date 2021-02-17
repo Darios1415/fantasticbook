@@ -9,18 +9,18 @@
 @section('content')
 <div class="card card-warning">
   <div class="card-header">
-    <h3 class="card-title"> Detalle de Genero</h3>
+    <h3 class="card-title"> Detalle de Genero Literario</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <form class="" action="#" method="post">
+    <form class="" action="{{route('guardar')}}" method="post">
 
       <div class="row">
         <div class="col-sm-8">
           <!-- text input -->
           <div class="form-group">
             <label>Ingresa el nombre del genero</label>
-            <input type="text" class="form-control" placeholder="Ingresa el nombre del genero literario ...">
+            <input type="text" class="form-control" name="nombreg"placeholder="Ingresa el nombre del genero literario ...">
           </div>
         </div>
 
@@ -30,25 +30,21 @@
           <!-- textarea -->
           <div class="form-group">
             <label>Descripcion del genero</label>
-            <textarea class="form-control" rows="3" placeholder="Descripción acerca del genero ..."></textarea>
+            <textarea class="form-control" rows="3" name="descripciong"placeholder="Descripción acerca del genero ..."></textarea>
           </div>
         </div>
 
       </div>
-</form>
 
-      <form class="" action="#" method="post">
+
+
       <div class="row">
         <div class="col-sm-6">
           <!-- select -->
           <div class="form-group">
             <label>Subgnero</label>
-            <select class="form-control">
-              <option>Escoge una opcion</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
-              <option>option 5</option>
+            <select  name="nombresg" id="subgenero">
+<option value="">escoge un subgenero</option>
             </select>
           </div>
         </div>
