@@ -48,3 +48,8 @@ Route::get ('usuario', function(){
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
+
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
+});
