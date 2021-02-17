@@ -71,7 +71,7 @@
                 <div class="form-group col-md-2">
                     <label>Disponibilidad:</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="disponibilidad1" name="disponibilidad" value="Digital" class="custom-control-input">
+                        <input type="radio" id="disponibilidad1" name="disponibilidad" value="Digital" class="custom-control-input" checked>
                         <label class="custom-control-label" for="disponibilidad1">Digital</label>
                       </div>
                       <div class="custom-control custom-radio">
@@ -130,7 +130,11 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="InputFile">Archivo</label>
+                    <label for="InputFile">Archivo
+                      @if($errors->first('archivo'))
+                      <p class='text-danger'>{{$errors->first('archivo')}}</p>
+                      @endif
+                    </label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="archivo" id="archivo">
@@ -139,7 +143,11 @@
                     </div>
                   </div>
                   <div class="form-group col-md-6">
-                  <label for="InputFoto">Imágen</label>
+                  <label for="InputFoto">Imágen
+                    @if($errors->first('foto'))
+                    <p class='text-danger'>{{$errors->first('foto')}}</p>
+                    @endif
+                  </label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="foto" id="foto">
