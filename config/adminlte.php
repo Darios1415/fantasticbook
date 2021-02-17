@@ -85,8 +85,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
 
     /*
@@ -253,40 +253,40 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'Reportes',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text'    => 'Usuarios',
+                    'url'     => 'usuario',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Libros',
+                    'url'  => 'usuario',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Sucursal',
+                    'url'  => 'libros',
+                ],
+                [
+                    'text' => 'Genero',
+                    'url'  => 'libros',
+                ],
+                [
+                    'text' => 'Subgenero',
+                    'url'  => 'libros',
+                ],
+                [
+                    'text' => 'Municipio',
+                    'url'  => 'libros',
+                ],
+                [
+                    'text' => 'Cuenta',
+                    'url'  => 'libros',
+                ],
+                [
+                    'text' => 'Tipo de usuario',
+                    'url'  => 'libros',
                 ],
             ],
         ],

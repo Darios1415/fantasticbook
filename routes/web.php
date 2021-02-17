@@ -15,3 +15,36 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get ('formulario', function(){
+    return view('cruds.formulario');
+});
+
+Route::get ('tabla', function(){
+    return view('tablas.general');
+});
+
+// pago
+Route::get ('pago', function(){
+    return view('cruds.pago');
+});
+
+//renta
+Route::get ('renta', function(){
+    return view('cruds.renta');
+});
+
+//sucursal
+Route::get ('sucursal', function(){
+    return view('cruds.sucursal');
+});
+
+//usuario
+Route::get ('usuario', function(){
+    return view('cruds.usuarios');
+});
+
+//ventas
+Route::get ('ventas', function(){
+    return view('cruds.ventas');
+});
