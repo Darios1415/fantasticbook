@@ -21,10 +21,19 @@ class GenerosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+     public function guardar(Request $request)
+     {
+         $nombre=$request->nombreg;
+         $sexo=$request->descripciong;
+         $this->validate($request,[
+             'nombreg' => 'required|regex:/^[A-Z][A-Z,a-z, ,á,é,í,ó,ú]+$/',
+             'descripciong'=>'required|regex:/^[A-Z][A-Z,a-z, ,á,é,í,ó,ú]+$/',
+              ]);
+         echo "Todo completo";
+
+     // return $request;
+         // return view ("layaut/vista2");
+     }
 
     /**
      * Store a newly created resource in storage.
