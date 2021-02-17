@@ -41,14 +41,21 @@ Route::get ('sucursal', function(){
 });
 
 //usuario
-Route::get ('usuario', function(){
-    return view('cruds.usuarios');
+Route::get ('reporte_usuarios', function(){
+    return view('Cruds.Usuarios.index');
 });
-
+Route::get ('crear_usuario', function(){
+    return view('Cruds.Usuarios.create');
+});
+Route::get ('editar_usuario', function(){
+    return view('Cruds.Usuarios.edit');
+});
+Route::resource('usuarios','App\Http\Controllers\UsuarioController');
 //ventas
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
+
 
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
