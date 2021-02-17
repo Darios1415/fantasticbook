@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,7 @@ Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
 
-//municipio
-Route::get ('municipio', function(){
-    return view('tablas.municipio');
-});
+
+//libros
+Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
+Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
