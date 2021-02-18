@@ -13,7 +13,7 @@ class MunicipioController extends Controller
      */
     public function index()
     {
-        //
+        return view('tablas.municipio');
     }
 
     /**
@@ -23,7 +23,7 @@ class MunicipioController extends Controller
      */
     public function create()
     {
-        //
+        return view('Cruds.municipio.create');
     }
 
     /**
@@ -34,7 +34,11 @@ class MunicipioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    /*  $municipio = new municipio();
+        $municipio->municipio = $request->get('municipio');
+        $municipio->save(); 
+        return redirect('/municipio');
+    */
     }
 
     /**
@@ -43,7 +47,7 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idmun)
     {
         //
     }
@@ -54,9 +58,10 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idmun)
     {
-        //
+        //$municipio = Municipio::find(idmun);
+        return view('Cruds.municipio.edit');//->with('municipio',$municipio);
     }
 
     /**
@@ -68,7 +73,11 @@ class MunicipioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    /*  $municipio = Municipio::find($idmun);
+        $municipio->municipio = $request->get('municipio');
+        $municipio->save(); 
+        return redirect('/municpio');
+    */
     }
 
     /**
@@ -77,8 +86,11 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idmun)
     {
-        //
+    /*  $municipio = Municipio::find($idmun);
+        $municipio->delete();
+        return redirect('/municipio');
+    */
     }
 }

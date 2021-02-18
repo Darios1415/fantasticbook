@@ -18,10 +18,11 @@
               <div class="card-header">
                 <div class="col-lg-4">
                 <div class="btn-group w-100">
-                    <span class="btn btn-success col fileinput-button">
+                  <a href="municipio/create"> <span class="btn btn-success col fileinput-button">
                         <i class="fas fa-plus"></i>
                         <span>agregar municipio</span>
                     </span>
+                    </a>
                 </div>
                 </div>
                 </div>
@@ -40,7 +41,7 @@
                     <td>Toluca</td>
                     <td>Lerma</td>
                     <td align="left">
-                    <a href="/editar_usuario" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                    <a href="/editar_municipio" class="btn btn-warning"><i class="material-icons">edit</i></a>
                     <button class="btn btn-danger"><i class="material-icons">delete</i></button>
                 </td>
                   </tr> 

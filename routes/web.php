@@ -32,11 +32,6 @@ Route::get ('pago', function(){
     return view('cruds.pago');
 });
 
-//municipio
-Route::get ('municipio', function(){
-    return view('tablas.municipio');
-});
-
 //sucursal
 Route::get ('sucursal', function(){
     return view('cruds.sucursal');
@@ -70,8 +65,15 @@ Route::post('guardar',[GenerosController::class,"guardar"])->name ('guardar');
 
 //municipio
 Route::get ('municipio', function(){
-    return view('tablas.municipio');
+    return view('tablas.municipio');    
 });
+Route::get ('crear_municipio', function(){
+    return view('Cruds.municipio.create');
+});
+Route::get ('editar_municipio', function(){
+    return view('Cruds.municipio.edit');
+});
+Route::resource('municipio','App\Http\Controllers\MunicipioController');
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
