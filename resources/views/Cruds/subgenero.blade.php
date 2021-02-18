@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>hola</h1>
+    <h1>ventas</h1>
 @stop
 
 @section('content')
@@ -17,9 +17,3 @@
 @section('js')
     <script> console.log('Hi!'); </script>
 @stop
-
-<!--KevinMeM-->
-<!--Dulce-->
-<!--Intento #39838-->
-<!-- Jose Antonio MArtinez Ruiz -->
-<!-- Jose prueba 2 -->
