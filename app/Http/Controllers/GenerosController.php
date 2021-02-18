@@ -26,7 +26,20 @@ class GenerosController extends Controller
              'nombre' => 'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
              'descripcion'=>'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
               ]);
-        
+
+
+     return $request;
+
+     }
+      public function guardarsubgenero(Request $request)
+     {
+         $nombre=$request->nombre;
+         $sexo=$request->descripcion;
+         $this->validate($request,[
+             'nombre' => 'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
+             'descripcion'=>'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
+              ]);
+
 
      return $request;
 
