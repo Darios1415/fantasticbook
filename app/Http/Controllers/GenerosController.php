@@ -11,10 +11,7 @@ class GenerosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function altagenero()
-    {
-    return view('Cruds.genero');
-    }
+    
 
     /**
      * Show the form for creating a new resource.
