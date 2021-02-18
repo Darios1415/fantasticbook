@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Fantasticbook',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Fantastic</b>Book',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -225,7 +225,11 @@ return [
 
     'menu' => [
         [
+<<<<<<< HEAD
             'text' => 'buscar',
+=======
+            'text' => 'Buscar',
+>>>>>>> b21bcded9b94a17e962bcfc4f0a09be1cbaf46fa
             'search' => true,
             'topnav' => true,
         ],
@@ -258,7 +262,7 @@ return [
             'submenu' => [
                 [
                     'text'    => 'Usuarios',
-                    'url'     => 'usuario',
+                    'url'     => 'reporte_usuarios',
                 ],
                 [
                     'text' => 'Libros',

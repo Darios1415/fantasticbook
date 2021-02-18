@@ -32,9 +32,9 @@ Route::get ('pago', function(){
     return view('cruds.pago');
 });
 
-//renta
-Route::get ('renta', function(){
-    return view('cruds.renta');
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
 });
 
 //sucursal
@@ -57,9 +57,6 @@ Route::resource('usuarios','App\Http\Controllers\UsuarioController');
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
-
-Route::get ('altagenero',[GenerosController::class,'altagenero'])->name('genero');
-Route::post('guardargenero',[GenerosController::class,"guardargenero"])->name ('guardargenero');
 
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
