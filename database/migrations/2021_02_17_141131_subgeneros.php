@@ -16,6 +16,7 @@ class Subgeneros extends Migration
         Schema::create('subgeneros',function(Blueprint $table){
             $table->increments('idsg');
             $table->string('nombre' ,50);
+            $table->string('descripcion' ,50);
             $table->rememberToken();
             $table->timestamps();
     });
