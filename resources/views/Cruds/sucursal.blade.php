@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
-                    <input type="nombre" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                   </div>
                   </div>
             
@@ -35,7 +35,7 @@
                   
                   <div class="form-group">
                     <label for="exampleInputPassword1">Telefono</label>
-                    <input type="telefono" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+                    <input type="number" class="form-control" id="telefono" placeholder="Telefono">
                   </div>
                   </div>
                   
@@ -46,7 +46,7 @@
                   <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputPassword1">Ciudad</label>
-                    <input type="ciudad" class="form-control" id="exampleInputPassword1" placeholder="Ciudad">
+                    <input type="text" class="form-control" id="Ciudad" placeholder="Ciudad">
                   </div>
                   </div>
                   
@@ -69,21 +69,21 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleInputPassword1">Calle</label>
-                    <input type="calle" class="form-control" id="exampleInputPassword1" placeholder="Calle">
+                    <input type="text" class="form-control" id="calle" placeholder="Calle">
                   </div>
                   </div>
 
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleInputPassword1">No.Interior</label>
-                    <input type="interior" class="form-control" id="exampleInputPassword1" placeholder="No.Interior">
+                    <input type="number" class="form-control" id="interior" placeholder="No.Interior">
                   </div>
                   </div>
                   
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleInputPassword1">No.Exterior</label>
-                    <input type="exterior" class="form-control" id="exampleInputPassword1" placeholder="No.Exterior">
+                    <input type="number" class="form-control" id="exterior" placeholder="No.Exterior">
                   </div>
                   </div>
 
@@ -94,7 +94,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="submit" class="btn btn-success">Enviar</button>
+                  <a href="/sucursal" class="btn btn-danger">Cancelar </a>
                 </div>
               </form>
             </div>
@@ -114,5 +115,20 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+ $(function () {
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
+    });
+  });
+</script>
 @stop

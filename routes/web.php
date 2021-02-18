@@ -53,3 +53,8 @@ Route::get ('ventas', function(){
 Route::get ('municipio', function(){
     return view('tablas.municipio');
 });
+
+//Sucursald 
+Route::get ('sucursald', function(){
+    return view('tablas.sucursald');
+});
