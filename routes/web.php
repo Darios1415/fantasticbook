@@ -30,9 +30,9 @@ Route::get ('pago', function(){
     return view('cruds.pago');
 });
 
-//renta
-Route::get ('renta', function(){
-    return view('cruds.renta');
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
 });
 
 //sucursal
@@ -55,7 +55,6 @@ Route::resource('usuarios','App\Http\Controllers\UsuarioController');
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
-
 
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
