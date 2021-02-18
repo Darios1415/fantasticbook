@@ -62,9 +62,6 @@ Route::get ('genero', function(){
 });
 Route::post('guardar',[GenerosController::class,"guardar"])->name ('guardar');
 
-
-//municipio
-Route::get ('municipio', function(){
     return view('tablas.municipio');    
 });
 Route::get ('crear_municipio', function(){
@@ -77,3 +74,14 @@ Route::resource('municipio','App\Http\Controllers\MunicipioController');
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+
+//municipio
+Route::get ('municipio', function(){
+
+    return view('tablas.municipio');
+});
+
+//Sucursald 
+Route::get ('sucursald', function(){
+    return view('tablas.sucursald');
+});

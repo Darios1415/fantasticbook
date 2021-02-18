@@ -23,8 +23,7 @@ class SucursalController extends Controller
      */
     public function create()
     {
-        //
-    }
+       return view("cruds.sucursal");    }
 
     /**
      * Store a newly created resource in storage.
