@@ -86,21 +86,24 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
-        $(document).ready(function() {
+  $(function () {
     $('#usuarios').DataTable({
-        "lengthMenu": [[5,10,50,-1], [5,10,50, "All"]]
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
     });
-} );
+  });
     </script>
 @stop
