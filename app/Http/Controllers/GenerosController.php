@@ -11,7 +11,7 @@ class GenerosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -26,10 +26,10 @@ class GenerosController extends Controller
              'nombre' => 'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
              'descripcion'=>'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
               ]);
-         echo "Todo completo";
+        
 
      return $request;
-         // return view ("layaut/vista2");
+
      }
 
     /**

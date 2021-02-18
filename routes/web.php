@@ -67,3 +67,8 @@ Route::get ('genero', function(){
     return view('cruds.genero');
 });
 Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');
+// subgenero
+Route::get ('subgenero', function(){
+    return view('cruds.subgenero');
+});
+Route::post ('guardarsubgenero',[GenerosController::class,'guardarsubgenero'])->name('guardarsubgenero');

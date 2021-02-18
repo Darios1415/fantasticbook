@@ -24,7 +24,7 @@
               <p class='text-danger'>{{$errors->first('nombre')}}</p>
               @endif
             <label>Ingresa el nombre del genero</label>
-            <input type="text" class="form-control" id="nombre" name="nombre"placeholder="Ingresa el nombre del genero literario ...">
+            <input type="text" class="form-control" id="nombre" value="{{old('nombre')}}"name="nombre"placeholder="Ingresa el nombre del genero literario ...">
           </div>
         </div>
 
@@ -37,33 +37,17 @@
               <p class='text-danger'>{{$errors->first('descripcion')}}</p>
               @endif
             <label>Descripcion del genero</label>
-            <textarea class="form-control" rows="3" id="descripcion" name="descripcion"placeholder="Descripción acerca del genero ..."></textarea>
+            <textarea class="form-control" rows="3" id="descripcion"  name="descripcion"placeholder="Descripción acerca del genero ..." value="{{old('descripcion')}}"></textarea>
           </div>
         </div>
 
       </div>
-
-
-
-      <div class="row">
-        <div class="col-sm-6">
-          <!-- select -->
-          <div class="form-group">
-            <label>Subgenero</label>
-            <select  name="nombresg" id="subgenero">
-<option value="">escoge un subgenero</option>
-            </select>
-          </div>
-        </div>
-
-      </div>
-
-
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-warning">Agregar</button>
     </form>
   </div>
   <!-- /.card-body -->
 </div>
+
 @stop
 
 @section('css')
