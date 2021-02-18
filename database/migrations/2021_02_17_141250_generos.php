@@ -15,8 +15,8 @@ class Generos extends Migration
     {
         Schema::create('generos',function(Blueprint $table){
             $table->increments('idg');
-            $table->string('nombreg' ,50);
-            $table->string('descripciong' ,50);
+            $table->string('nombre' ,50);
+            $table->string('descripcion' ,50);
 
             $table->integer('idsg')->unsigned();
             $table->foreign('idsg')->references('idsg')->on('subgeneros');
