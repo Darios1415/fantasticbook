@@ -61,3 +61,9 @@ Route::get ('ventas', function(){
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+
+//genero
+Route::get ('genero', function(){
+    return view('cruds.genero');
+});
+Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');

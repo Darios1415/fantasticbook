@@ -19,8 +19,12 @@
         <div class="col-sm-8">
           <!-- text input -->
           <div class="form-group">
+
+              @if($errors->first('nombre'))
+              <p class='text-danger'>{{$errors->first('nombre')}}</p>
+              @endif
             <label>Ingresa el nombre del genero</label>
-            <input type="text" class="form-control" name="nombreg"placeholder="Ingresa el nombre del genero literario ...">
+            <input type="text" class="form-control" id="nombre" name="nombre"placeholder="Ingresa el nombre del genero literario ...">
           </div>
         </div>
 
@@ -29,8 +33,11 @@
         <div class="col-sm-8">
           <!-- textarea -->
           <div class="form-group">
+              @if($errors->first('descripcion'))
+              <p class='text-danger'>{{$errors->first('descripcion')}}</p>
+              @endif
             <label>Descripcion del genero</label>
-            <textarea class="form-control" rows="3" name="descripciong"placeholder="Descripción acerca del genero ..."></textarea>
+            <textarea class="form-control" rows="3" id="descripcion" name="descripcion"placeholder="Descripción acerca del genero ..."></textarea>
           </div>
         </div>
 

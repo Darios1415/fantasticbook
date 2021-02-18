@@ -26,12 +26,12 @@ class GenerosController extends Controller
          $nombre=$request->nombreg;
          $sexo=$request->descripciong;
          $this->validate($request,[
-             'nombreg' => 'required|regex:/^[A-Z][A-Z,a-z, ,á,é,í,ó,ú]+$/',
-             'descripciong'=>'required|regex:/^[A-Z][A-Z,a-z, ,á,é,í,ó,ú]+$/',
+             'nombre' => 'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
+             'descripcion'=>'required|regex:/^[A-Z][a-z, ,á,é,í,ó,ú]+$/',
               ]);
          echo "Todo completo";
 
-     // return $request;
+     return $request;
          // return view ("layaut/vista2");
      }
 
