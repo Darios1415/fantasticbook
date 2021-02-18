@@ -58,6 +58,20 @@ Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
 
+
+//libros
+Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
+Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+Route::get ('genero', function(){
+    return view('cruds.genero');
+});
+Route::post('guardar',[GenerosController::class,"guardar"])->name ('guardar');
+
+
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
+});
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
