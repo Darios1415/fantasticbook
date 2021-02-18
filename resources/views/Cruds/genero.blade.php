@@ -7,14 +7,14 @@
 @stop
 
 @section('content')
+ <form action="{{route('guardargenero')}}" method="POST">
 <div class="card card-warning">
   <div class="card-header">
     <h3 class="card-title"> Detalle de Genero Literario</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <form class="" action="{{route('guardar')}}" method="post">
-
+{{csrf_field()}}
       <div class="row">
         <div class="col-sm-8">
           <!-- text input -->
@@ -42,7 +42,7 @@
         <div class="col-sm-6">
           <!-- select -->
           <div class="form-group">
-            <label>Subgnero</label>
+            <label>Subgenero</label>
             <select  name="nombresg" id="subgenero">
 <option value="">escoge un subgenero</option>
             </select>
