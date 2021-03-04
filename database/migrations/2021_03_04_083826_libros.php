@@ -18,7 +18,7 @@ class Libros extends Migration
             $table->string('nombre',50);
             $table->string('autor',40);
             $table->integer('paginas');
-            $table->date('fechap',40);
+            $table->string('fechap',15);
             $table->string('idioma',10);
             $table->string('sinopsis',160);
             $table->string('disponibilidad',8);
@@ -28,6 +28,8 @@ class Libros extends Migration
 
             $table->integer('idgen')->unsigned();
             $table->foreign('idgen')->references('idgen')->on('generos');
+            $table->integer('idsubgen')->unsigned();
+            $table->foreign('idsubgen')->references('idsubgen')->on('subgeneros');
 
             $table->rememberToken();
             $table->timestamps();
