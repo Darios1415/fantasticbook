@@ -9,6 +9,6 @@ class Usuario extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-    protected $fillable = ['id','foto','nombre','app','apm','fn','telefono','estado','municipio','calle','num_i',
-                'type','cuenta','correo','contra','genero','activo','referencia'];
+    protected $fillable = ['id','nombre','app','apm','fn','telefono','estado','municipio','calle','num_i',
+                'type','cuenta','correo','contra','genero','activo','referencia']; 
 }

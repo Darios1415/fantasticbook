@@ -14,8 +14,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //$usuarios = Usuario::all();
-        return view('Cruds.Usuarios.index');//->with('usuarios',$usuarios);
+        $usuarios = Usuario::all();
+        return view('Cruds.Usuarios.index')->with('usuarios',$usuarios);
     }
 
     /**
@@ -36,9 +36,9 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-    /*  $usuarios = new Usuario();
+      $usuarios = new Usuario();
 
-        $usuarios->foto = $request->get('foto');
+        
         $usuarios->nombre = $request->get('nombre');
         $usuarios->app = $request->get('app');
         $usuarios->apm = $request->get('apm');
@@ -58,7 +58,7 @@ class UsuarioController extends Controller
 
         $usuarios->save(); 
         return redirect('/usuarios');
-    */
+    
     }
 
     /**
@@ -80,8 +80,8 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //$usuario = Usuario::find(id);
-        return view('Cruds.Usuarios.edit');//->with('usuario',$usuario);
+        $usuario = Usuario::find($id);
+        return view('Cruds.Usuarios.edit')->with('usuario',$usuario);
     }
 
     /**
@@ -93,9 +93,9 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-    /*  $usuario = Usuario::find($id);
+      $usuario = Usuario::find($id);
 
-        $usuario->foto = $request->get('foto');
+        
         $usuario->nombre = $request->get('nombre');
         $usuario->app = $request->get('app');
         $usuario->apm = $request->get('apm');
@@ -113,9 +113,9 @@ class UsuarioController extends Controller
         $usuario->activo = $request->get('activo');
         $usuario->referencia = $request->get('referencia');
 
-        $usuarios->save(); 
+        $usuario->save(); 
         return redirect('/usuarios');
-    */
+    
     }
 
     /**
@@ -126,9 +126,9 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-      /*  $usuario = Usuario::find($id);
+        $usuario = Usuario::find($id);
         $usuario->delete();
         return redirect('/usuarios');
-      */
+      
     }
 }

@@ -14,7 +14,7 @@ class CreateMunicipiosTable extends Migration
     public function up()
     {
         Schema::create('municipios', function (Blueprint $table) {
-            $table->idmun();
+            $table->increments('idmun');
             $table->string('municipio',50);
             $table->timestamps();
         });

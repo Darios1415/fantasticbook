@@ -27,56 +27,38 @@
         <thead class="bg-primary text-white">
             <tr>
                 <th scope="col" align="justify">Clave</th>
-                <th scope="col" align="justify">Foto</th>
                 <th scope="col" align="justify">Nombre Completo</th>
                 <th scope="col" align="justify">Teléfono</th>
-                <th scope="col" align="justify">Estado</th>
                 <th scope="col" align="justify">Municipio</th>
                 <th scope="col" align="justify">Calle</th>
                 <th scope="col" align="justify">Tipo</th>
                 <th scope="col" align="justify">Cuenta</th>
-                <th scope="col" align="justify">Correo</th>
                 <th scope="col" align="justify">Activo</th>
                 <th scope="col" align="justify">Opciones</th>
             </tr>
         </thead>
         <tbody>
-        
-            <tr>
-                <td align="center">1</td>
-                <td align="center"></td>
-                <td>Jimena Tovar Hernández</td>
-                <td align="left">7225020216</td>
-                <td align="cengter">México</td>
-                <td>Xonacatlan</td>
-                <td >Constitución</td>
-                <td align="center">Cliente</td>
-                <td align="center">Free</td>
-                <td align="center">jimena@gmail.com</td>
-                <td align="center">Si</td>
-                <td align="left">
-                    <a href="/editar_usuario" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                    <button class="btn btn-danger"><i class="material-icons">delete</i></button>
-                </td>
-            </tr>
 
+            @foreach ($usuarios as $usuario)
             <tr>
-                <td align="center">2</td>
-                <td align="center"></td>
-                <td>Samara Torre Blanca</td>
-                <td align="left">7225020216</td>
-                <td align="cengter">México</td>
-                <td >Xonacatlan</td>
-                <td >Constitución</td>
-                <td align="center">Cliente</td>
-                <td align="center">Free</td>
-                <td align="center">jimena@gmail.com</td>
-                <td align="center">Si</td>
-                <td align="left">
-                    <a href="/editar_usuario" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                    <button class="btn btn-danger"><i class="material-icons">delete</i></button>
+                <td align="center">{{ $usuario->id}}</td>
+                <td align="left">{{ $usuario->nombre}} {{ $usuario->app}} {{ $usuario->apm}}</td>
+                <td>{{ $usuario->telefono}}</td>
+                <td>{{ $usuario->municipio}}</td>
+                <td>{{ $usuario->calle}}</td>
+                <td>{{ $usuario->type}}</td>
+                <td>{{ $usuario->cuenta}}</td>
+                <td align="center">{{ $usuario->activo}}</td>  
+                <td align="left">            
+		    <form action="{{route ('usuarios.destroy',$usuario->id)}}" method="POST">   
+                    <a href="/usuarios/{{$usuario->id}}/edit" class="btn btn-warning"><i class="material-icons">edit</i></a>
+		    @csrf
+                    @method("DELETE")
+                    <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
+		    </form>
                 </td>
             </tr>
+            @endforeach
             
         </tbody>
     </table>
