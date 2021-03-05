@@ -29,9 +29,10 @@ class CreateUsuariosTable extends Migration
             $table->string('correo',50);
             $table->string('contra',50);
             $table->string('genero',50);
-            $table->string('activo',50);
+            //$table->string('activo',50);
             $table->string('referencia',100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

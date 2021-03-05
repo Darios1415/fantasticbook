@@ -19,6 +19,12 @@
 
 @section('content')
 
+@if(Session::has('mensaje'))
+    <div class="alert alert-success">
+        {{Session::get('mensaje')}}
+    </div>
+@endif
+
 <a href="usuarios/create" class="btn btn-outline-dark mb-4 "><i class="material-icons">add_circle</i></a>
 <div class="table-responsive">
           
@@ -33,7 +39,7 @@
                 <th scope="col" align="justify">Calle</th>
                 <th scope="col" align="justify">Tipo</th>
                 <th scope="col" align="justify">Cuenta</th>
-                <th scope="col" align="justify">Activo</th>
+                <th scope="col" align="justify">Género</th>
                 <th scope="col" align="justify">Opciones</th>
             </tr>
         </thead>
@@ -48,14 +54,26 @@
                 <td>{{ $usuario->calle}}</td>
                 <td>{{ $usuario->type}}</td>
                 <td>{{ $usuario->cuenta}}</td>
-                <td align="center">{{ $usuario->activo}}</td>  
-                <td align="left">            
-		    <form action="{{route ('usuarios.destroy',$usuario->id)}}" method="POST">   
-                    <a href="/usuarios/{{$usuario->id}}/edit" class="btn btn-warning"><i class="material-icons">edit</i></a>
-		    @csrf
-                    @method("DELETE")
-                    <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
-		    </form>
+                <td align="center">{{ $usuario->genero}}</td>  
+                <td align="left">    
+                @if(!$usuario->deleted_at)        
+		            <form action="{{route ('usuarios.destroy',$usuario->id)}}" method="POST">   
+                            <a href="/usuarios/{{$usuario->id}}/edit" class="btn btn-warning"><i class="material-icons">edit</i></a>
+		            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
+		            </form>
+                    <form action="{{route ('borrarUsuario',$usuario->id)}}" method="POST">
+		            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-secondary"><i class="material-icons">delete_forever</i></button>
+		            </form>
+                @else
+                    <form action="{{route ('restaurarUsuario',$usuario->id)}}" method="POST">
+		            @csrf
+                            <button type="submit" class="btn btn-primary"><i class="material-icons">restore</i></button>
+		            </form>
+                @endif
                 </td>
             </tr>
             @endforeach

@@ -51,6 +51,8 @@ Route::get ('editar_usuario', function(){
     return view('Cruds.Usuarios.edit');
 });
 Route::resource('usuarios','App\Http\Controllers\UsuarioController');
+Route::post('restaurarUsuario/{id}', 'App\Http\Controllers\UsuarioController@activeUser')->name('restaurarUsuario');
+Route::delete('borrarUsuario/{id}', 'App\Http\Controllers\UsuarioController@forcedDestroy')->name('borrarUsuario');
 //ventas
 Route::get ('ventas', function(){
     return view('cruds.ventas');

@@ -149,39 +149,27 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="form-group">
-                        <label class="form-label">Género</label>
-                            <select class="form-control select2" style="width: 100%;" name="genero" id="genero"  required>
-                                <option selected  value="{{$usuario->genero}}">{{$usuario->genero}}</option>
-                                <option>Masculino</option>
-                                <option>Femenino</option>
-                            </select>
-                            <div class="valid-feedback">¡Ok válido!</div>
-                            <div class="invalid-feedback"> Selecciona una opción  </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <label for="validationServer03" class="form-label">Activo</label>
+                      <label for="validationServer03" class="form-label">Género</label>
                       <!-- radio -->
 
                       <div class="form-group">
-                      @if($usuario->activo==='Si')
+                      @if($usuario->genero == 'Masculino')
                         <div class="custom-control custom-radio" >
-                          <input class="custom-control-input" type="radio" id="customRadio1" name="activo" value="Si" checked="">
-                          <label for="customRadio1" class="custom-control-label">Si</label>
+                          <input class="custom-control-input" type="radio" id="customRadio1" name="genero" value="Masculino" checked="">
+                          <label for="customRadio1" class="custom-control-label">Masculino</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio2" name="activo" value="No" >
-                          <label for="customRadio2" class="custom-control-label" >No</label>
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="genero" value="Femenino" >
+                          <label for="customRadio2" class="custom-control-label" >Femenino</label>
                         </div>
                       @else
                       <div class="custom-control custom-radio" >
-                          <input class="custom-control-input" type="radio" id="customRadio1" name="activo" value="Si" >
-                          <label for="customRadio1" class="custom-control-label">Si</label>
+                          <input class="custom-control-input" type="radio" id="customRadio1" name="genero" value="Masculino" >
+                          <label for="customRadio1" class="custom-control-label">Masculino</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio2" name="activo" value="No" checked="">
-                          <label for="customRadio2" class="custom-control-label" >No</label>
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="genero" value="Femenino" checked="">
+                          <label for="customRadio2" class="custom-control-label" >Femenino</label>
                         </div>
                       @endif
                       </div>

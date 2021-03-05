@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use Session;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +15,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::all();
+        $usuarios = Usuario::withTrashed()->get();
+        //return $usuarios;
         return view('Cruds.Usuarios.index')->with('usuarios',$usuarios);
     }
 
@@ -36,6 +38,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request;
       $usuarios = new Usuario();
 
         
@@ -53,10 +56,13 @@ class UsuarioController extends Controller
         $usuarios->correo = $request->get('correo');
         $usuarios->contra = $request->get('contra');
         $usuarios->genero = $request->get('genero');
-        $usuarios->activo = $request->get('activo');
         $usuarios->referencia = $request->get('referencia');
 
         $usuarios->save(); 
+
+        Session::flash('mensaje',"El usuario $request->nombre $request->app $request->apm
+        ha sido dado de alta exitosamente");
+
         return redirect('/usuarios');
     
     }
@@ -94,7 +100,6 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
       $usuario = Usuario::find($id);
-
         
         $usuario->nombre = $request->get('nombre');
         $usuario->app = $request->get('app');
@@ -110,10 +115,13 @@ class UsuarioController extends Controller
         $usuario->correo = $request->get('correo');
         $usuario->contra = $request->get('contra');
         $usuario->genero = $request->get('genero');
-        $usuario->activo = $request->get('activo');
         $usuario->referencia = $request->get('referencia');
 
         $usuario->save(); 
+
+        Session::flash('mensaje',"El usuario $request->nombre $request->app $request->apm
+        ha sido modificado exitosamente");
+
         return redirect('/usuarios');
     
     }
@@ -127,7 +135,38 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         $usuario = Usuario::find($id);
+
+        Session::flash('mensaje',"El usuario $usuario->nombre $usuario->app $usuario->apm
+        ha sido desactivado exitosamente");
+
         $usuario->delete();
+
+        return redirect('/usuarios');
+      
+    }
+
+    public function forcedDestroy($id)
+    {
+        $usuario = Usuario::find($id);
+
+        Session::flash('mensaje',"El usuario $usuario->nombre $usuario->app $usuario->apm
+        ha sido borrado permanentemente");
+
+        $usuario->forceDelete();
+        
+
+        return redirect('/usuarios');
+      
+    }
+
+    public function activeUser($id)
+    {
+        $usuario_id = Usuario::withTrashed()->where('id', $id)->restore();
+        $usuario = Usuario::find($usuario_id);
+
+        Session::flash('mensaje',"El usuario $usuario->nombre $usuario->app $usuario->apm
+        ha sido activado exitosamente");
+
         return redirect('/usuarios');
       
     }

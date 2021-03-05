@@ -149,28 +149,16 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="form-group">
-                        <label class="form-label">Género</label>
-                            <select class="form-control select2" style="width: 100%;"  name="genero" id="genero" required>
-                                <option selected disabled value="">Seleccione</option>
-                                <option>Masculino</option>
-                                <option>Femenino</option>
-                            </select>
-                            <div class="valid-feedback">¡Ok válido!</div>
-                            <div class="invalid-feedback"> Selecciona una opción</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <label for="validationServer03" class="form-label">Activo</label>
+                      <label for="validationServer03" class="form-label">Género</label>
                       <!-- radio -->
                       <div class="form-group">
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio1" name="activo" checked="">
-                          <label for="customRadio1" class="custom-control-label">Si</label>
+                          <input class="custom-control-input" type="radio" value="Masculino" id="customRadio1" name="genero" checked="">
+                          <label for="customRadio1" class="custom-control-label">Masculino</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio2" name="activo" >
-                          <label for="customRadio2" class="custom-control-label" >No</label>
+                          <input class="custom-control-input" type="radio" value="Femenino" id="customRadio2" name="genero" >
+                          <label for="customRadio2" class="custom-control-label" >Femenino</label>
                         </div>
                       </div>
                     </div>
