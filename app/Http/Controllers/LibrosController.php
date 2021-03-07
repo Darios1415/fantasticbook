@@ -9,9 +9,31 @@ use App\Models\libros;
 
 class LibrosController extends Controller
 {
-    //
+    // 
+    public function borrarlibro($idlibro){
+        $libros=libros::withTrashed()->find($idlibro)->forceDelete();
+        return view('mensajesl')
+            ->with('proceso',"BORRAR LIBRO")
+            ->with('mensaje',"El libro ha sido borrado del sistema correctamente")
+            ->with('error',1);
+    }
+    public function activarlibro($idlibro){
+        $libros=libros::withTrashed()->where('idlibro',$idlibro)->restore();
+        return view('mensajesl')
+            ->with('proceso',"ACTIVAR LIBRO")
+            ->with('mensaje',"El libro ha sido activado correctamente")
+            ->with('error',1);
+    }
+    public function desactivalibro($idlibro){
+        $libros=libros::find($idlibro);
+        $libros->delete();
+        return view('mensajesl')
+            ->with('proceso',"DESACTIVAR LIBRO")
+            ->with('mensaje',"El libro ha sido desactivado correctamente")
+            ->with('error',1);
+    }
     public function altalibro() {
-        $consulta=libros::OrderBy('idlibro','DESC')->take(1)->get();
+        $consulta=libros::withTrashed()->OrderBy('idlibro','DESC')->take(1)->get();
         $cuantos=count($consulta);
         if($cuantos==0){
             $idlsigue = 1;
@@ -20,10 +42,12 @@ class LibrosController extends Controller
             $idlsigue=$consulta[0]->idlibro + 1;
         }
         $generos =generos::orderBy('genero')->get();
+        $subgeneros =subgeneros::orderBy('subgenero')->get();
         //return $idlsigue;
         return view('altalibro')
             ->with('idlsigue',$idlsigue)
-            ->with('generos',$generos);
+            ->with('generos',$generos)
+            ->with('subgeneros',$subgeneros);
     }
 
     public function guardarlibro(Request $request) {
@@ -59,9 +83,9 @@ class LibrosController extends Controller
     }
 
     public function reportelibros(){
-        $consulta=libros::join('generos','libros.idgen','=','generos.idgen')
+        $consulta=libros::withTrashed()->join('generos','libros.idgen','=','generos.idgen')
         ->select('libros.idlibro','libros.nombre','libros.autor','libros.precio',
-        'generos.genero as gen','libros.foto')
+        'generos.genero as gen','libros.foto','libros.deleted_at')
         ->orderBy('libros.nombre')
         ->get();
         return view('reportelibros')->with('consulta',$consulta);

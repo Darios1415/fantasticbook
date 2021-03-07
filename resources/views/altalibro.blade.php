@@ -125,9 +125,9 @@
                     <label for="idsubgen">Subgénero:</label>
                     <select name="idsubgen" id="idsubgen" class="form-control">
                       <option selected="">Elige un subgénero</option>
-                      <option value="1">Crímenes reales</option>
-                      <option value="2">Novela histórica</option>
-                      <option value="3">Suspense</option>
+                      @foreach($subgeneros as $subgen)
+                      <option value="1">{{$subgen->subgenero}}</option>
+                      @endforeach
                     </select>
                   </div>
                 </div>

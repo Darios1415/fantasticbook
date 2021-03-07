@@ -26,8 +26,19 @@
                 <th scope="row">{{$c->idgen}}</th>
                 <td>{{$c->genero}}</td>
                 <td>
-                <button type="button" class="btn btn-warning">Editar</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    @if($c->deleted_at)
+                    <a href="{{route('activargenero',['idgen'=>$c->idgen])}}">
+                        <button type="button" class="btn btn-success">activar</button>
+                    </a>
+                    <a href="{{route('borrargenero',['idgen'=>$c->idgen])}}">
+                        <button type="button" class="btn btn-secondary">Borrar</button>
+                    </a>
+                    @else
+                    <a href="{{route('desactivagenero',['idgen'=>$c->idgen])}}">
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                    </a>
+                    @endif
                 </td>
             </tr>
             @endforeach

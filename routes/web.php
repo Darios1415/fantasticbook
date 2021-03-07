@@ -63,6 +63,9 @@ Route::get ('ventas', function(){
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altalibro');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
 Route::get ('reportelibros',[LibrosController::class,'reportelibros'])->name('reportelibros');
+Route::get ('desactivalibro/{idlibro}',[LibrosController::class,'desactivalibro'])->name('desactivalibro');
+Route::get ('activarlibro/{idlibro}',[LibrosController::class,'activarlibro'])->name('activarlibro');
+Route::get ('borrarlibro/{idlibro}',[LibrosController::class,'borrarlibro'])->name('borrarlibro');
 
 
 Route::get ('eloquent',[LibrosController::class,'eloquent'])->name('eloquent');
@@ -71,10 +74,15 @@ Route::get ('eloquent',[LibrosController::class,'eloquent'])->name('eloquent');
 Route::get ('altagenero',[GenerosController::class,'altagenero'])->name('altagenero');
 Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');
 Route::get ('reportegeneros',[GenerosController::class,'reportegeneros'])->name('reportegeneros');
+Route::get ('desactivagenero/{idgen}',[GenerosController::class,'desactivagenero'])->name('desactivagenero');
+Route::get ('activargenero/{idgen}',[GenerosController::class,'activargenero'])->name('activargenero');
+Route::get ('borrargenero/{idgen}',[GenerosController::class,'borrargenero'])->name('borrargenero');
 
 //subgeneros
 Route::get ('altasubgenero',[SubgenerosController::class,'altasubgenero'])->name('altasubgenero');
 Route::post ('guardarsubgenero',[SubgenerosController::class,'guardarsubgenero'])->name('guardarsubgenero');
 Route::get ('reportesubgeneros',[SubgenerosController::class,'reportesubgeneros'])->name('reportesubgeneros');
-
+Route::get ('desactivasubgenero/{idsubgen}',[SubgenerosController::class,'desactivasubgenero'])->name('desactivasubgenero');
+Route::get ('activarsubgenero/{idsubgen}',[SubgenerosController::class,'activarsubgenero'])->name('activarsubgenero');
+Route::get ('borrarsubgenero/{idsubgen}',[SubgenerosController::class,'borrarsubgenero'])->name('borrarsubgenero');
 
