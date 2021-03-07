@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\GenerosController;
+use App\Http\Controllers\SubgenerosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +62,16 @@ Route::get ('ventas', function(){
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altalibro');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+
+
+Route::get ('eloquent',[LibrosController::class,'eloquent'])->name('eloquent');
+
+//generos
+Route::get ('altagenero',[GenerosController::class,'altagenero'])->name('altagenero');
+Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');
+
+//subgeneros
+Route::get ('altasubgenero',[SubgenerosController::class,'altasubgenero'])->name('altasubgenero');
+Route::post ('guardarsubgenero',[SubgenerosController::class,'guardarsubgenero'])->name('guardarsubgenero');
+
+

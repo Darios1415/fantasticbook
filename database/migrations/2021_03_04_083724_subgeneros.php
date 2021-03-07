@@ -15,7 +15,7 @@ class Subgeneros extends Migration
     {
         Schema::create('subgeneros',function(Blueprint $table){
             $table->increments('idsubgen');
-            $table->string('nombre' ,50);
+            $table->string('subgenero' ,50);
             
             $table->integer('idgen')->unsigned();
             $table->foreign('idgen')->references('idgen')->on('generos');
