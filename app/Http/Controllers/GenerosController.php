@@ -33,4 +33,8 @@ class GenerosController extends Controller
             ->with('mensaje',"El genero $request->genero ha sido dado de alta correctamente");
         
     }
+    public function reportegeneros(){
+        $consulta = generos::all();
+        return view('reportegeneros')->with('consulta',$consulta);
+    }
 }

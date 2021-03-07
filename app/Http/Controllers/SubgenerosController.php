@@ -37,4 +37,11 @@ class SubgenerosController extends Controller
             ->with('mensaje',"El subgenero $request->subgenero ha sido dado de alta correctamente");
         
     }
+    public function reportesubgeneros(){
+        $consulta=subgeneros::join('generos','subgeneros.idgen','=','generos.idgen')
+        ->select('subgeneros.idsubgen','generos.genero as gen','subgeneros.subgenero')
+        ->orderBy('subgeneros.subgenero')
+        ->get();
+        return view('reportesubgeneros')->with('consulta',$consulta);
+    }
 }

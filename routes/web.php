@@ -62,6 +62,7 @@ Route::get ('ventas', function(){
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altalibro');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+Route::get ('reportelibros',[LibrosController::class,'reportelibros'])->name('reportelibros');
 
 
 Route::get ('eloquent',[LibrosController::class,'eloquent'])->name('eloquent');
@@ -69,9 +70,11 @@ Route::get ('eloquent',[LibrosController::class,'eloquent'])->name('eloquent');
 //generos
 Route::get ('altagenero',[GenerosController::class,'altagenero'])->name('altagenero');
 Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');
+Route::get ('reportegeneros',[GenerosController::class,'reportegeneros'])->name('reportegeneros');
 
 //subgeneros
 Route::get ('altasubgenero',[SubgenerosController::class,'altasubgenero'])->name('altasubgenero');
 Route::post ('guardarsubgenero',[SubgenerosController::class,'guardarsubgenero'])->name('guardarsubgenero');
+Route::get ('reportesubgeneros',[SubgenerosController::class,'reportesubgeneros'])->name('reportesubgeneros');
 
 

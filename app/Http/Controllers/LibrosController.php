@@ -57,6 +57,15 @@ class LibrosController extends Controller
             ->with('mensaje',"El libro $request->nombre ha sido dado de alta correctamente");
         
     }
+
+    public function reportelibros(){
+        $consulta=libros::join('generos','libros.idgen','=','generos.idgen')
+        ->select('libros.idlibro','libros.nombre','libros.autor','libros.precio',
+        'generos.genero as gen','libros.foto')
+        ->orderBy('libros.nombre')
+        ->get();
+        return view('reportelibros')->with('consulta',$consulta);
+    }
     public function editarlibro($idlibro)
     {
         return view('editarlibro');

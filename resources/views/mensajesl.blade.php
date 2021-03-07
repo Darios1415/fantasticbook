@@ -2,15 +2,11 @@
 
 @section('title', 'Dashboard')
 
-@section('content_header')
-    <h1><center>Registro de libros</center></h1>
-@stop
-
 @section('content')
     <div class="container">
-    <h1>PROCESO {{$proceso}}</h1>
+    <h1><center>PROCESO {{$proceso}}</center></h1>
     <br>
-    <div class="alert alert-success">{{$mensaje}}</div
+    <div class="alert alert-success">{{$mensaje}}</div>
 
   
 @stop
