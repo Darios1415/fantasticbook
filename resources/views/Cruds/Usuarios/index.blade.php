@@ -27,7 +27,6 @@
 
 <a href="usuarios/create" class="btn btn-outline-dark mb-4 "><i class="material-icons">add_circle</i></a>
 <div class="table-responsive">
-          
 
     <table  id="usuarios" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">

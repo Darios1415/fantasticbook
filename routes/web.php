@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibrosController;
 use  App\Http\Controllers\GenerosController;
-
+use  App\Http\Controllers\MunicipioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,16 +38,6 @@ Route::get ('sucursal', function(){
 });
 
 //usuario
-Route::get ('reporte_usuarios', function(){
-    return view('Cruds.Usuarios.index');
-});
-Route::get ('crear_usuario', function(){
-    return view('Cruds.Usuarios.create');
-});
-Route::get ('editar_usuario', function(){
-    return view('Cruds.Usuarios.edit');
-});
-
 Route::resource('usuarios','App\Http\Controllers\UsuarioController');
 Route::post('restaurarUsuario/{id}', 'App\Http\Controllers\UsuarioController@activeUser')->name('restaurarUsuario');
 Route::delete('borrarUsuario/{id}', 'App\Http\Controllers\UsuarioController@forcedDestroy')->name('borrarUsuario');
@@ -66,22 +56,13 @@ Route::get ('genero', function(){
 
 Route::post('guardar',[GenerosController::class,"guardar"])->name ('guardar');
 
-Route::get ('crear_municipio', function(){
-    return view('Cruds.municipio.create');
-});
-Route::get ('editar_municipio', function(){
-    return view('Cruds.municipio.edit');
-});
-Route::resource('municipio','App\Http\Controllers\MunicipioController');
-
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
 
 //municipio
-Route::get ('municipio', function(){
-    return view('tablas.municipio');
-});
+Route::resource('municipios','App\Http\Controllers\MunicipioController');
+
 
 //Sucursald 
 Route::get ('sucursald', function(){
