@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Fantasticbook',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Fantastic</b>Book',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -225,7 +225,7 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
+            'text' => 'Buscar',
             'search' => true,
             'topnav' => true,
         ],
@@ -258,15 +258,15 @@ return [
             'submenu' => [
                 [
                     'text'    => 'Usuarios',
-                    'url'     => 'usuario',
+                    'url'     => 'reporte_usuarios',
                 ],
                 [
                     'text' => 'Libros',
-                    'url'  => 'usuario',
+                    'url'  => 'libro',
                 ],
                 [
                     'text' => 'Sucursal',
-                    'url'  => 'libros',
+                    'url'  => 'sucursald',
                 ],
                 [
                     'text' => 'Genero',
@@ -278,7 +278,7 @@ return [
                 ],
                 [
                     'text' => 'Municipio',
-                    'url'  => 'libros',
+                    'url'  => 'municipio',
                 ],
                 [
                     'text' => 'Cuenta',
@@ -344,21 +344,21 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
