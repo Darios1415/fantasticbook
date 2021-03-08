@@ -266,7 +266,7 @@ return [
                 ],
                 [
                     'text' => 'Sucursal',
-                    'url'  => 'libros',
+                    'url'  => 'sucursald',
                 ],
                 [
                     'text' => 'Genero',

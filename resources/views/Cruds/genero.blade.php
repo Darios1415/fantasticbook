@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Sucursal')
+@section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Sucursales</h1>
+    <h1>Genero</h1>
 @stop
 
 @section('content')
@@ -21,21 +21,29 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{route('guardarsucursal)}}" method="POST">
+              {{csrf_field()}}
                 <div class="card-body">
                 <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                div class="form-group">
+                    <label >Nombre</label>
+                    @if($errors->first('nombre'))
+              <p class='text-danger'>{{$errors->first('nombre')}}</p>
+              @endif
+                    <input type="text" class="form-control" id="nombre" value="{{old('nombre')}}" name="nombre"placeholder="Nombre">
                   </div>
                   </div>
+
             
 <div class="col-md-6">
                   
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Telefono</label>
-                    <input type="number" class="form-control" id="telefono" placeholder="Telefono">
+                  @if($errors->first('telefono'))
+              <p class='text-danger'>{{$errors->first('telefono')}}</p>
+              @endif
+                    <label >Telefono</label>
+                    <input type="number" class="form-control" id="telefono" value="{{old('telefono')}}" placeholder="Telefono">
                   </div>
                   </div>
                   
@@ -45,8 +53,11 @@
                   <div class="row">
                   <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Ciudad</label>
-                    <input type="text" class="form-control" id="Ciudad" placeholder="Ciudad">
+                  @if($errors->first('ciudad'))
+              <p class='text-danger'>{{$errors->first('ciudad')}}</p>
+              @endif
+                    <label>Ciudad</label>
+                    <input type="text" class="form-control" id="Ciudad" value="{{old('ciudad')}}"  placeholder="Ciudad">
                   </div>
                   </div>
                   
@@ -68,28 +79,35 @@
                   <div class="row">
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Calle</label>
-                    <input type="text" class="form-control" id="calle" placeholder="Calle">
+                  @if($errors->first('calle'))
+              <p class='text-danger'>{{$errors->first('calle')}}</p>
+              @endif
+                    <label>Calle</label>
+                    <input type="text" class="form-control" id="calle"  value="{{old('calle')}}" placeholder="Calle">
                   </div>
                   </div>
 
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="exampleInputPassword1">No.Interior</label>
-                    <input type="number" class="form-control" id="interior" placeholder="No.Interior">
+                  @if($errors->first('interior'))
+              <p class='text-danger'>{{$errors->first('interior')}}</p>
+              @endif
+                    <label>No.Interior</label>
+                    <input type="number" class="form-control" id="interior" value="{{old('interior')}}" placeholder="No.Interior">
                   </div>
                   </div>
                   
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="exampleInputPassword1">No.Exterior</label>
-                    <input type="number" class="form-control" id="exterior" placeholder="No.Exterior">
+                  @if($errors->first('exterior'))
+              <p class='text-danger'>{{$errors->first('exterior')}}</p>
+              @endif
+                    <label>No.Exterior</label>
+                    <input type="number" class="form-control" id="exterior" value="{{old('exterior')}}" placeholder="No.Exterior">
                   </div>
                   </div>
 
                   </div> <!-- /.row -->
-
-                    
 
                 <!-- /.card-body -->
 
@@ -108,27 +126,10 @@
     </section>
     <!-- /.content -->
 @stop
-
-
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-<script>
- $(function () {
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-      "language": {
-      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-    }
-    });
-  });
-</script>
+    <script> console.log('Hi!'); </script>
 @stop

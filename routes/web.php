@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\SucursalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,15 @@ Route::get ('municipio', function(){
     return view('tablas.municipio');
 });
 
-//sucursal
-Route::get ('sucursal', function(){
-    return view('cruds.sucursal');
-});
+
+//Sucursald
+Route::resource('sucursals','App\Http\Controllers\SucursaldController');
+
+/*Route::group(['middleware' => ['web']], function (){
+    Route::resource('index','SucursaldController');
+});*/
+
+
 
 //usuario
 Route::get ('reporte_usuarios', function(){
@@ -61,10 +67,12 @@ Route::get ('municipio', function(){
     return view('tablas.municipio');
 });
 
-//Sucursald 
-Route::get ('sucursald', function(){
-    return view('tablas.sucursald');
-});
+
 //libros
 Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+
+
+
+
+
