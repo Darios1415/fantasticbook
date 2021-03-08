@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+<<<<<<< HEAD
 
     <!-- Main content -->
     <section class="content">
@@ -126,6 +127,60 @@
     </section>
     <!-- /.content -->
 @stop
+=======
+ <form action="{{route('guardargenero')}}" method="POST">
+<div class="card card-warning">
+  <div class="card-header">
+    <h3 class="card-title"> Detalle de Genero Literario</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+{{csrf_field()}}
+      <div class="row">
+        <div class="col-sm-8">
+          <!-- text input -->
+          <div class="form-group">
+            <label>Ingresa el nombre del genero</label>
+            <input type="text" class="form-control" name="nombreg"placeholder="Ingresa el nombre del genero literario ...">
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>Descripcion del genero</label>
+            <textarea class="form-control" rows="3" name="descripciong"placeholder="Descripción acerca del genero ..."></textarea>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- select -->
+          <div class="form-group">
+            <label>Subgenero</label>
+            <select  name="nombresg" id="subgenero">
+<option value="">escoge un subgenero</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+  <!-- /.card-body -->
+</div>
+@stop
+
+>>>>>>> 17452e60b2b403247975cced69b1228218064ecf
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
