@@ -17,7 +17,6 @@ class CreateMunicipiosTable extends Migration
             $table->increments('idmun');
             $table->string('municipio',50);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
