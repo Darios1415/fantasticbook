@@ -1,16 +1,18 @@
+
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Subgenero</h1>
-@stop
 
-@section('content')
-         <form action="{{route('guardarsubgenero')}}" method="POST">
-        <div class="card card-success">
+            <h1>Genero</h1>
+            @stop
+
+            @section('content')
+         <form action="{{route('cambiosgenero',$generos->idgenero)}}" method="POST">
+        <div class="card card-warning">
           <div class="card-header">
-            <h3 class="card-title"> Detalle del Subgenero Literario</h3>
+            <h3 class="card-title"> Modificar Genero Literario</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -23,10 +25,11 @@
                       @if($errors->first('nombre'))
                       <p class='text-danger'>{{$errors->first('nombre')}}</p>
                       @endif
-                    <label>Ingrese el nuevo subgenero</label>
-                    <input type="text" class="form-control" id="nombre" value="{{old('nombre')}}"name="nombre"placeholder="Ingresa el nombre del subgenero literario ...">
+                    <label>Ingresa el nombre del genero</label>
+                    <input type="text" class="form-control" id="nombre" value="{{$generos->nombre}}"name="nombre"placeholder="Ingresa el nombre del genero literario ...">
                   </div>
                 </div>
+
 
               </div>
               <div class="row">
@@ -36,21 +39,17 @@
                       @if($errors->first('descripcion'))
                       <p class='text-danger'>{{$errors->first('descripcion')}}</p>
                       @endif
-                    <label>Descripcion acerca del subgenero</label>
-                    <textarea class="form-control" rows="3" id="descripcion"  name="descripcion"placeholder="Descripción acerca del genero ..." value="{{old('descripcion')}}"></textarea>
+                    <label>Descripcion del genero</label>
+                    <textarea class="form-control" rows="3" id="descripcion"  name="descripcion" placeholder="Descripción acerca del genero ..." value="{{$generos->descripcion}}"></textarea>
                   </div>
                 </div>
 
-
-
               </div>
-             
-              <button type="submit" class="btn btn-success">Agregar</button>
+              <button type="submit" class="btn btn-warning">Modificar</button>
             </form>
           </div>
           <!-- /.card-body -->
         </div>
-
         @stop
 
         @section('css')

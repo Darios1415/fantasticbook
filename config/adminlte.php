@@ -270,11 +270,11 @@ return [
                 ],
                 [
                     'text' => 'Genero',
-                    'url'  => 'genero',
+                    'url'  => 'reportegenero',
                 ],
                 [
                     'text' => 'Subgenero',
-                    'url'  => 'subgenero',
+                    'url'  => 'reportesubgenero',
                 ],
                 [
                     'text' => 'Municipio',

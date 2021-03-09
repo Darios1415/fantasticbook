@@ -65,10 +65,35 @@ Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('gua
 //genero
 Route::get ('genero', function(){
     return view('cruds.genero');
-});
+    });
+    Route::get ('reportegenero',[GenerosController::class,'reportegenero'])->name('reportegenero');
+    Route::get ('reportesubgenero',[GenerosController::class,'reportesubgenero'])->name('reportesubgenero');
+
+
+// Route::get ('reportesubg', function(){
+//     return view('tablas.tsubgenero');
+//     });
+// Route::get ('reportegen', function(){
+//     return view('tablas.tgenero');
+//     });
 Route::post ('guardargenero',[GenerosController::class,'guardargenero'])->name('guardargenero');
 // subgenero
 Route::get ('subgenero', function(){
     return view('cruds.subgenero');
 });
 Route::post ('guardarsubgenero',[GenerosController::class,'guardarsubgenero'])->name('guardarsubgenero');
+Route::get ('altasubgenero',[GenerosController::class,'altasubgenero'])->name('altasubgenero');
+Route::get ('altagenero',[GenerosController::class,'altagenero'])->name('altagenero');
+Route::get ('desactivagenero/{idgenero}',[GenerosController::class,'desactivagenero'])->name('desactivagenero');
+Route::get ('reactivagenero/{idgenero}',[GenerosController::class,'reactivagenero'])->name('reactivagenero');
+Route::get ('borrargenero/{idgenero}',[GenerosController::class,'borrargenero'])->name('borrargenero');
+Route::get ('desactivasubgenero/{idsg}',[GenerosController::class,'desactivasubgenero'])->name('desactivasubgenero');
+Route::get ('reactivasubgenero/{idsg}',[GenerosController::class,'reactivasubgenero'])->name('reactivasubgenero');
+Route::get ('borrarsubgenero/{idsg}',[GenerosController::class,'borrarsubgenero'])->name('borrarsubgenero');
+
+
+Route::get ('modificargenero/{idgenero}',[GenerosController::class,'modificargenero'])->name('modificargenero');
+Route::post ('cambiosgenero/{idgenero}/edit',[GenerosController::class,'cambiosgenero'])->name('cambiosgenero');
+
+Route::get ('modificarsubgenero/{idsg}',[GenerosController::class,'modificarsubgenero'])->name('modificarsubgenero');
+Route::post ('cambiossubgenero/{idsg}/edit',[GenerosController::class,'cambiossubgenero'])->name('cambiossubgenero');
