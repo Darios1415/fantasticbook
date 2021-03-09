@@ -1,8 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\SucursalController;
 use  App\Http\Controllers\GenerosController;
 use  App\Http\Controllers\MunicipioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +34,15 @@ Route::get ('pago', function(){
     return view('cruds.pago');
 });
 
-//sucursal
-Route::get ('sucursal', function(){
-    return view('cruds.sucursal');
+
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
 });
+
+
+//Sucursald
+Route::resource('sucursals','App\Http\Controllers\SucursaldController');
 
 //usuario
 Route::resource('usuarios','App\Http\Controllers\UsuarioController');
@@ -45,6 +52,12 @@ Route::delete('borrarUsuario/{id}', 'App\Http\Controllers\UsuarioController@forc
 //ventas
 Route::get ('ventas', function(){
     return view('cruds.ventas');
+});
+
+
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
 });
 
 //libros
@@ -69,3 +82,4 @@ Route::get ('sucursald', function(){
     return view('tablas.sucursald');
 });
 Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');
+
