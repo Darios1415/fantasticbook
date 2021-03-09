@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,9 @@ Route::get ('pago', function(){
     return view('cruds.pago');
 });
 
-//renta
-Route::get ('renta', function(){
-    return view('cruds.renta');
+//municipio
+Route::get ('municipio', function(){
+    return view('tablas.municipio');
 });
 
 //sucursal
@@ -50,7 +51,13 @@ Route::get ('editar_usuario', function(){
     return view('Cruds.Usuarios.edit');
 });
 Route::resource('usuarios','App\Http\Controllers\UsuarioController');
+Route::post('restaurarUsuario/{id}', 'App\Http\Controllers\UsuarioController@activeUser')->name('restaurarUsuario');
+Route::delete('borrarUsuario/{id}', 'App\Http\Controllers\UsuarioController@forcedDestroy')->name('borrarUsuario');
 //ventas
 Route::get ('ventas', function(){
     return view('cruds.ventas');
 });
+
+//libros
+Route::get ('altalibro',[LibrosController::class,'altalibro'])->name('altaempleado');
+Route::post ('guardarlibro',[LibrosController::class,'guardarlibro'])->name('guardarlibro');

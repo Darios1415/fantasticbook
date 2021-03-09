@@ -19,6 +19,12 @@
 
 @section('content')
 
+@if(Session::has('mensaje'))
+    <div class="alert alert-success">
+        {{Session::get('mensaje')}}
+    </div>
+@endif
+
 <a href="usuarios/create" class="btn btn-outline-dark mb-4 "><i class="material-icons">add_circle</i></a>
 <div class="table-responsive">
           
@@ -27,56 +33,50 @@
         <thead class="bg-primary text-white">
             <tr>
                 <th scope="col" align="justify">Clave</th>
-                <th scope="col" align="justify">Foto</th>
                 <th scope="col" align="justify">Nombre Completo</th>
                 <th scope="col" align="justify">Teléfono</th>
-                <th scope="col" align="justify">Estado</th>
                 <th scope="col" align="justify">Municipio</th>
                 <th scope="col" align="justify">Calle</th>
                 <th scope="col" align="justify">Tipo</th>
                 <th scope="col" align="justify">Cuenta</th>
-                <th scope="col" align="justify">Correo</th>
-                <th scope="col" align="justify">Activo</th>
+                <th scope="col" align="justify">Género</th>
                 <th scope="col" align="justify">Opciones</th>
             </tr>
         </thead>
         <tbody>
-        
-            <tr>
-                <td align="center">1</td>
-                <td align="center"></td>
-                <td>Jimena Tovar Hernández</td>
-                <td align="left">7225020216</td>
-                <td align="cengter">México</td>
-                <td>Xonacatlan</td>
-                <td >Constitución</td>
-                <td align="center">Cliente</td>
-                <td align="center">Free</td>
-                <td align="center">jimena@gmail.com</td>
-                <td align="center">Si</td>
-                <td align="left">
-                    <a href="/editar_usuario" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                    <button class="btn btn-danger"><i class="material-icons">delete</i></button>
-                </td>
-            </tr>
 
+            @foreach ($usuarios as $usuario)
             <tr>
-                <td align="center">2</td>
-                <td align="center"></td>
-                <td>Samara Torre Blanca</td>
-                <td align="left">7225020216</td>
-                <td align="cengter">México</td>
-                <td >Xonacatlan</td>
-                <td >Constitución</td>
-                <td align="center">Cliente</td>
-                <td align="center">Free</td>
-                <td align="center">jimena@gmail.com</td>
-                <td align="center">Si</td>
-                <td align="left">
-                    <a href="/editar_usuario" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                    <button class="btn btn-danger"><i class="material-icons">delete</i></button>
+                <td align="center">{{ $usuario->id}}</td>
+                <td align="left">{{ $usuario->nombre}} {{ $usuario->app}} {{ $usuario->apm}}</td>
+                <td>{{ $usuario->telefono}}</td>
+                <td>{{ $usuario->municipio}}</td>
+                <td>{{ $usuario->calle}}</td>
+                <td>{{ $usuario->type}}</td>
+                <td>{{ $usuario->cuenta}}</td>
+                <td align="center">{{ $usuario->genero}}</td>  
+                <td align="left">    
+                @if(!$usuario->deleted_at)        
+		            <form action="{{route ('usuarios.destroy',$usuario->id)}}" method="POST">   
+                            <a href="/usuarios/{{$usuario->id}}/edit" class="btn btn-warning"><i class="material-icons">edit</i></a>
+		            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
+		            </form>
+                    <form action="{{route ('borrarUsuario',$usuario->id)}}" method="POST">
+		            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-secondary"><i class="material-icons">delete_forever</i></button>
+		            </form>
+                @else
+                    <form action="{{route ('restaurarUsuario',$usuario->id)}}" method="POST">
+		            @csrf
+                            <button type="submit" class="btn btn-primary"><i class="material-icons">restore</i></button>
+		            </form>
+                @endif
                 </td>
             </tr>
+            @endforeach
             
         </tbody>
     </table>
@@ -86,21 +86,24 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
-        $(document).ready(function() {
+  $(function () {
     $('#usuarios').DataTable({
-        "lengthMenu": [[5,10,50,-1], [5,10,50, "All"]]
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
     });
-} );
+  });
     </script>
 @stop
